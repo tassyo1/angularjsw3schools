@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </head>
+    <body ng-app="myApp">
+
+        <!--Element name -->
+                <w3-test-directive>
+                </w3-test-directive>
+        
+        <!--Attribute -->
+        <div w3-test-directive></div>
+        
+        
+        <script>
+            var app = angular.module("myApp",[]);
+
+            app.directive("w3TestDirective", function(){
+                return {template: "<h1>Made by a directive</h1>"
+            };
+        
+            });
+        </script>
+    </body>
+    
+</html>
