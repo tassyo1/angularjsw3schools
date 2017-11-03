@@ -1,0 +1,20 @@
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+        </head>
+        <body>
+            <div ng-app="myApp" class="w3-test" >
+
+            </div>
+
+           <script>
+           var app = angular.module("myApp",[]);
+           app.directive("w3Test",function(){
+               return{
+                   restrict: "C",
+                   template: "<h1>Restrict by a class</h1>"
+               };
+           });
+           </script>
+        </body>
+    </html>

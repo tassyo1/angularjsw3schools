@@ -1,0 +1,34 @@
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+            <style>
+                input.ng-invalid{
+                    background-color: lightblue;
+                }
+            </style>
+        </head>
+    <body>
+    <form ng-app="" name="myForm">
+        Enter your name: <input name="myName" ng-model="text" required>
+
+        <h1>Status</h1>
+        {{myForm.myName.$valid}}
+    </form>
+       
+    </body>
+    </html>
+
+<!-- 
+    The ng-model directive adds/removes the following classes,
+     according to the status of the form field:
+    ng-empty
+    ng-not-empty
+    ng-touched
+    ng-untouched
+    ng-valid
+    ng-invalid
+    ng-dirty
+    ng-pending
+    ng-pristine
+
+-->
