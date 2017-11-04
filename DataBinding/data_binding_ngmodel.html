@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+    </head>
+<body>
+    
+    <div ng-app="myApp" ng-controller="myControl">
+        <input type="text" ng-model="firstName +' '+ lastName">
+        <p>Use the ng-model directive to bind data from the model to the view on HTML controls (input, select, textarea)</p>
+    </div>
+
+    <script>
+    var app = angular.module('myApp',[]);
+    app.controller('myControl',function($scope){
+        $scope.firstName ="John";
+        $scope.lastName = "Doe";
+    });
+    </script>
+</body>
+</html>
