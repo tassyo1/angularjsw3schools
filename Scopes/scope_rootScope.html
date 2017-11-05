@@ -1,0 +1,44 @@
+
+<!--
+
+
+    The rootScope is available in the entire application.
+ -->
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+        </head>
+    <body ng-app="myApp">
+
+        <h1>The rootScope's color:</h1>
+        <p>{{color}}</p>
+
+        <div ng-controller="myControl" >
+            <h2>The scope of the controller's color:</h2>
+            <p>{{color}}</p>
+        </div>
+
+        <h1>The rootScope's color:</h1>
+        <p>{{color}}</p>
+
+        <div ng-controller="secondControl">
+            <h3>Second Control color:</h3>
+            <p>{{color}}</p>
+        </div>
+
+        <script>
+        var app = angular.module('myApp',[]);
+        app.run(function($rootScope){
+            $rootScope.color = 'blue';
+        });
+
+        app.controller('myControl',function($scope){
+            $scope.color='red';
+        });
+
+        app.controller('secondControl', function($scope){
+            $scope.color ='black';
+        });
+        </script>
+    </body>
+    </html>
