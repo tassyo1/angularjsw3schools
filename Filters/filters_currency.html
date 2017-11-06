@@ -1,0 +1,20 @@
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+        </head>
+        <body>
+           <div ng-app="myApp" ng-controller="costController">
+                <h1>Price: {{price | currency}}</h1>
+           </div>
+           <script>
+           var app =angular.module('myApp',[]);
+           app.controller('costController',function($scope){
+               $scope.price = 58;
+           });
+           </script>
+        </body>
+    </html>
+
+    <!--
+        Read more about the currency filter in our AngularJS currency Filter Reference
+        https://www.w3schools.com/angular/ng_filter_currency.asp -->

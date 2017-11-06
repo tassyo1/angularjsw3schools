@@ -1,0 +1,28 @@
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+        </head>
+        <body>
+          <div ng-app="myApp" ng-controller="namesController">
+              <ul>
+                  <li ng-repeat="x in names | filter: 'i'">
+                    {{x}}
+                  </li>
+              </ul>
+          </div>
+           <script>
+           var app =angular.module('myApp',[]);
+           app.controller('namesController',function($scope){
+               $scope.names=['Jani',
+                  'Carl',
+                  'Margareth',
+                 'Hege',
+                 'Joe',
+                 'Gustav',
+                 'Birgit',
+                 'Mary',
+                 'Kai']
+            });
+           </script>
+        </body>
+    </html>
