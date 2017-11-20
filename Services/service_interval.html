@@ -1,0 +1,29 @@
+
+
+<!--
+The $interval service is AngularJS' version of the window.setInterval function.
+    
+ -->
+<html>
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+        </head>
+       <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <h1>{{theTime}}</h1>
+        </div>
+    
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope,$interval){
+                $scope.theTime = new Date().toLocaleTimeString();
+                
+                //Display the time every second:
+                $interval(function(){
+                    $scope.theTime = new Date().toLocaleTimeString();
+                },1000);    
+            });
+        </script>
+       
+       </body>
+    </html>

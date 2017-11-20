@@ -1,0 +1,26 @@
+
+
+
+<!-- The $timeout service is AngularJS' version of the window.setTimeout function.-->
+
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+    </head>
+   <body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        {{myHeader}}
+    </div>
+
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope,$timeout){
+            $scope.myHeader = "Hello world";
+            $timeout(function(){
+                $scope.myHeader =" How are you today?";
+            },2000);
+        });
+    </script>
+   
+   </body>
+</html>

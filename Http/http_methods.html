@@ -1,0 +1,35 @@
+<html>
+
+
+  <!--      .delete()
+        .get()
+        .head()
+        .jsonp()
+        .patch()
+        .post()
+        .put() -->
+    
+        <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+        </head>
+       <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+           <h1>{{myWelcome}}</h1> 
+        </div>
+    
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope,$http){
+                $http({
+                    method: 'GET',
+                    url: "welcome.htm"
+                }).then(function mySucess(response){
+                    $scope.myWelcome = response.data;
+                }, function myError(response){
+                    $scope.myWelcome = response.statusText;
+                });
+            });
+        </script>
+       
+       </body>
+    </html>
