@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"> </script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myCtrl" >
+          <select ng-model="selectedCar" ng-options="y.modelo for (x,y) in cars" ></select>
+         
+          <h1>Marca selecionada: {{selectedCar.marca}}</h1>
+          <h2>Modelo selecionado: {{selectedCar.modelo}}</h2>
+          <h3>Cor selecionada: {{selectedCar.cor}}</h3>
+        </div>
+
+       
+        <!-- o valor no par 'chave-valor' também pode ser um objeto -->
+            
+        <script>
+            var app = angular.module('myApp',[]);
+            
+            app.controller('myCtrl',function($scope){
+                $scope.cars = {
+                    //X      Y   
+                    carro1: {marca: "Fiat", modelo:"Mobi", cor: "branco"},
+                    carro2: {marca: "Honda", modelo:"Civic", cor:"preto"},
+                    carro3: {marca: "Hyndai", modelo:"HB20", cor: "amarelo"}
+                };
+            });
+        </script>
+    </body>
+</html>
